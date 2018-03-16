@@ -138,9 +138,9 @@ Install [GIT](https://git-scm.com/download/win) if not already installed on your
 
     az appservice plan create --name myAppServicePlan --resource-group myResourceGroup --sku S1 --is-linux
 
-## Create a web app. Give it a unique name. Specify any runtime (it will be replaced later)
+## Create a web app. Give it a unique name. Specify any runtime (it will be replaced later). Note: execute this from a Bash cmd line (not a Windows one; at this time this command will break on Windows)
 
-    az webapp create --name <app_name> --resource-group myResourceGroup --plan myAppServicePlan --runtime "PHP|7.0"
+    az webapp create --name <app_name> --resource-group myResourceGroup --plan myAppServicePlan --runtime "php|7.0"
     
 ## Configure web app to use ACR image 
 ```az webapp config container set``` command to assign the custom Docker image to the web app. Replace <app_name>, <docker-registry-server-url>, <registry-username>, and <password>. For Azure Container Registry, <docker-registry-server-url> is in the format https://<azure-container-registry-name>.azurecr.io.
